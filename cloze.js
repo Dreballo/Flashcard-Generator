@@ -5,15 +5,12 @@ var ClozeCard = function (text, cloze){
 	this.cloze = cloze;
 }
 
-ClozeCard.prototype.printInfo = function (){
-	console.log("---------------------");
-	console.log('Text :' + this.text + "\nCloze: " + this.cloze);
-	console.log("---------------------");
+//add a method for get parialText
+ClozeCard.prototype.partialText = function () {
 
-}
+	var clozeText = this.cloze;
+	return this.text.replace(clozeText, '...');
 
-ClozeCard.prototype.fullText = function() {
-	console.log("full text: " + this.cloze + this.text);
 }
 
 module.exports = ClozeCard; 
